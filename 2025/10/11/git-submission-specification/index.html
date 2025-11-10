@@ -19,21 +19,21 @@
   <meta name="author" content="zuyue200">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Git 开发常用命令大全目录 一、覆盖上一次提交 二、删除某次提交 三、实用技巧总结   一、覆盖上一次提交1. 使用 git commit –amend（最常用）这会修改最近一次提交，可以将新的更改合并到上一次提交中。 1234567891011# 将当前的更改添加到暂存区git add .# 覆盖上一次提交（会打开编辑器修改提交信息）git commit --amend# 直接使用原来的提交信">
+    <meta name="description" content="遵循规范的 Git 提交信息能极大提升代码的可维护性和团队协作效率。下面这个表格汇总了目前主流的提交信息规范核心要素：    规范要素 说明与要求 示例参考    提交类型 (Type) 用特定关键字说明提交目的，如 feat（新功能）、fix（修复 bug）。 feat, fix, docs   范围 (Scope) 可选，说明更改影响的部分，如模块、组件或文件。 (login), (route">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git 开发常用命令大全">
-<meta property="og:url" content="https://zuyue200.github.io/2025/10/11/git-work-cmds/index.html">
+<meta property="og:title" content="Git 提交信息规范">
+<meta property="og:url" content="https://zuyue200.github.io/2025/10/11/git-submission-specification/index.html">
 <meta property="og:site_name" content="zuyue的个人空间">
-<meta property="og:description" content="Git 开发常用命令大全目录 一、覆盖上一次提交 二、删除某次提交 三、实用技巧总结   一、覆盖上一次提交1. 使用 git commit –amend（最常用）这会修改最近一次提交，可以将新的更改合并到上一次提交中。 1234567891011# 将当前的更改添加到暂存区git add .# 覆盖上一次提交（会打开编辑器修改提交信息）git commit --amend# 直接使用原来的提交信">
+<meta property="og:description" content="遵循规范的 Git 提交信息能极大提升代码的可维护性和团队协作效率。下面这个表格汇总了目前主流的提交信息规范核心要素：    规范要素 说明与要求 示例参考    提交类型 (Type) 用特定关键字说明提交目的，如 feat（新功能）、fix（修复 bug）。 feat, fix, docs   范围 (Scope) 可选，说明更改影响的部分，如模块、组件或文件。 (login), (route">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img1.baidu.com/it/u=2853165890,490679423&fm=253&fmt=auto&app=138&f=JPEG?w=802&h=500">
 <meta property="article:published_time" content="2025-10-11T14:45:05.000Z">
-<meta property="article:modified_time" content="2025-11-08T17:06:03.931Z">
+<meta property="article:modified_time" content="2025-11-08T17:04:47.119Z">
 <meta property="article:author" content="zuyue200">
 <meta property="article:tag" content="Git">
 <meta property="article:tag" content="版本控制">
-<meta property="article:tag" content="命令行">
-<meta property="article:tag" content="代码管理">
+<meta property="article:tag" content="代码规范">
+<meta property="article:tag" content="提交规范">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://img1.baidu.com/it/u=2853165890,490679423&fm=253&fmt=auto&app=138&f=JPEG?w=802&h=500">
   
@@ -41,7 +41,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Git 开发常用命令大全 - zuyue的个人空间</title>
+  <title>Git 提交信息规范 - zuyue的个人空间</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Git 开发常用命令大全"></span>
+            <span id="subtitle" data-typed-text="Git 提交信息规范"></span>
           
         </div>
 
@@ -247,7 +247,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          925 字
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
         
-          12 分钟
+          8 分钟
         
       </span>
     
@@ -304,113 +304,93 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Git 开发常用命令大全</h1>
+            <h1 id="seo-header">Git 提交信息规范</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Git-开发常用命令大全"><a href="#Git-开发常用命令大全" class="headerlink" title="Git 开发常用命令大全"></a>Git 开发常用命令大全</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#%E4%B8%80%E8%A6%86%E7%9B%96%E4%B8%8A%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4">一、覆盖上一次提交</a></li>
-<li><a href="#%E4%BA%8C%E5%88%A0%E9%99%A4%E6%9F%90%E6%AC%A1%E6%8F%90%E4%BA%A4">二、删除某次提交</a></li>
-<li><a href="#%E4%B8%89%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93">三、实用技巧总结</a></li>
-</ul>
-<hr>
-<h2 id="一、覆盖上一次提交"><a href="#一、覆盖上一次提交" class="headerlink" title="一、覆盖上一次提交"></a>一、覆盖上一次提交</h2><h3 id="1-使用-git-commit-–amend（最常用）"><a href="#1-使用-git-commit-–amend（最常用）" class="headerlink" title="1. 使用 git commit –amend（最常用）"></a>1. 使用 git commit –amend（最常用）</h3><p>这会修改最近一次提交，可以将新的更改合并到上一次提交中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 将当前的更改添加到暂存区</span><br>git add .<br><br><span class="hljs-comment"># 覆盖上一次提交（会打开编辑器修改提交信息）</span><br>git commit --amend<br><br><span class="hljs-comment"># 直接使用原来的提交信息，不打开编辑器</span><br>git commit --amend --no-edit<br><br><span class="hljs-comment"># 同时修改提交信息和作者信息</span><br>git commit --amend --author=<span class="hljs-string">&quot;新作者 &lt;email@example.com&gt;&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="2-如果已经推送到远程仓库"><a href="#2-如果已经推送到远程仓库" class="headerlink" title="2. 如果已经推送到远程仓库"></a>2. 如果已经推送到远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 先本地修改</span><br>git add .<br>git commit --amend<br><br><span class="hljs-comment"># 强制推送到远程（注意：这会重写远程历史）</span><br>git push --force-with-lease origin 分支名<br></code></pre></td></tr></table></figure>
-
-<h3 id="3-使用-git-reset-然后重新提交"><a href="#3-使用-git-reset-然后重新提交" class="headerlink" title="3. 使用 git reset 然后重新提交"></a>3. 使用 git reset 然后重新提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 软重置到上一次提交（保留更改在暂存区）</span><br>git reset --soft HEAD~1<br><br><span class="hljs-comment"># 查看状态，更改已经在暂存区</span><br>git status<br><br><span class="hljs-comment"># 重新提交</span><br>git commit -m <span class="hljs-string">&quot;新的提交信息&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="4-具体使用场景示例"><a href="#4-具体使用场景示例" class="headerlink" title="4. 具体使用场景示例"></a>4. 具体使用场景示例</h3><h4 id="场景1：忘记添加文件到上次提交"><a href="#场景1：忘记添加文件到上次提交" class="headerlink" title="场景1：忘记添加文件到上次提交"></a>场景1：忘记添加文件到上次提交</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 发现少提交了文件</span><br>git add 忘记的文件.txt<br>git commit --amend --no-edit<br></code></pre></td></tr></table></figure>
-
-<h4 id="场景2：修改提交信息"><a href="#场景2：修改提交信息" class="headerlink" title="场景2：修改提交信息"></a>场景2：修改提交信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 只修改提交信息，没有代码更改</span><br>git commit --amend -m <span class="hljs-string">&quot;新的提交信息&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="场景3：修改提交的作者信息"><a href="#场景3：修改提交的作者信息" class="headerlink" title="场景3：修改提交的作者信息"></a>场景3：修改提交的作者信息</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit --amend --author=<span class="hljs-string">&quot;新姓名 &lt;new-email@example.com&gt;&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="5-重要注意事项"><a href="#5-重要注意事项" class="headerlink" title="5. 重要注意事项"></a>5. 重要注意事项</h3><ul>
-<li><strong>只适用于本地最新提交</strong>：<code>--amend</code> 只能修改最近一次提交</li>
-<li><strong>已推送的提交</strong>：如果已经推送到远程，需要强制推送</li>
-<li><strong>协作分支</strong>：在共享分支上谨慎使用，可能会影响其他协作者</li>
-<li>**推荐使用 <code>--force-with-lease</code>**：比 <code>--force</code> 更安全</li>
-</ul>
-<h3 id="6-完整工作流程示例"><a href="#6-完整工作流程示例" class="headerlink" title="6. 完整工作流程示例"></a>6. 完整工作流程示例</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1. 做一些修改</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;新内容&quot;</span> &gt;&gt; file.txt<br><br><span class="hljs-comment"># 2. 添加到暂存区</span><br>git add file.txt<br><br><span class="hljs-comment"># 3. 覆盖上一次提交</span><br>git commit --amend<br><br><span class="hljs-comment"># 4. 如果已推送，强制更新（谨慎使用）</span><br>git push --force-with-lease origin main<br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>推荐</strong>：在个人分支或功能分支上可以自由使用 <code>--amend</code>，但在主分支或共享分支上要谨慎使用。</p>
-</blockquote>
-<p><a href="#%E7%9B%AE%E5%BD%95">返回目录</a></p>
-<h2 id="二、删除某次提交"><a href="#二、删除某次提交" class="headerlink" title="二、删除某次提交"></a>二、删除某次提交</h2><h3 id="1-使用-git-revert（推荐用于共享仓库）"><a href="#1-使用-git-revert（推荐用于共享仓库）" class="headerlink" title="1. 使用 git revert（推荐用于共享仓库）"></a>1. 使用 git revert（推荐用于共享仓库）</h3><p>这会创建一个新的提交来撤销指定提交的更改，不会修改历史记录。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 撤销某次提交</span><br>git revert &lt;commit-hash&gt;<br><br><span class="hljs-comment"># 撤销最近的一次提交</span><br>git revert HEAD<br><br><span class="hljs-comment"># 撤销多个连续的提交（从commitA到commitB，不包括commitA）</span><br>git revert &lt;commitA&gt;..&lt;commitB&gt;<br></code></pre></td></tr></table></figure>
-
-<h3 id="2-使用-git-reset（适用于本地仓库）"><a href="#2-使用-git-reset（适用于本地仓库）" class="headerlink" title="2. 使用 git reset（适用于本地仓库）"></a>2. 使用 git reset（适用于本地仓库）</h3><p>这会直接删除提交记录，会重写历史，不推荐用于已推送到远程仓库的提交。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 软重置 - 保留工作目录和暂存区的更改</span><br>git reset --soft &lt;commit-hash&gt;<br><br><span class="hljs-comment"># 混合重置（默认）- 保留工作目录的更改，重置暂存区</span><br>git reset &lt;commit-hash&gt;<br>git reset --mixed &lt;commit-hash&gt;<br><br><span class="hljs-comment"># 硬重置 - 完全删除提交，不保留任何更改</span><br>git reset --hard &lt;commit-hash&gt;<br><br><span class="hljs-comment"># 删除最近的一次提交（硬重置）</span><br>git reset --hard HEAD~1<br></code></pre></td></tr></table></figure>
-
-<h3 id="3-使用-git-rebase-交互式模式"><a href="#3-使用-git-rebase-交互式模式" class="headerlink" title="3. 使用 git rebase 交互式模式"></a>3. 使用 git rebase 交互式模式</h3><p>适用于删除中间某次提交或重新排列提交历史。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 交互式重写最近n次提交</span><br>git rebase -i HEAD~n<br><br><span class="hljs-comment"># 或者指定到某个提交</span><br>git rebase -i &lt;commit-hash&gt;<br></code></pre></td></tr></table></figure>
-
-<p>在交互式界面中，将要删除的提交前的 <code>pick</code> 改为 <code>drop</code> 或直接删除该行。</p>
-<h3 id="4-使用-git-cherry-pick-选择性应用提交"><a href="#4-使用-git-cherry-pick-选择性应用提交" class="headerlink" title="4. 使用 git cherry-pick 选择性应用提交"></a>4. 使用 git cherry-pick 选择性应用提交</h3><p>如果你想保留某些提交但删除其他提交：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 创建一个新的分支</span><br>git checkout -b new-branch &lt;base-commit&gt;<br><br><span class="hljs-comment"># 逐个挑选想要的提交</span><br>git cherry-pick &lt;commit-hash1&gt; &lt;commit-hash2&gt; ...<br></code></pre></td></tr></table></figure>
-
-<h3 id="5-注意事项"><a href="#5-注意事项" class="headerlink" title="5. 注意事项"></a>5. 注意事项</h3><ul>
-<li><strong>git revert</strong>：最安全，适用于公共分支，不会影响其他协作者</li>
-<li><strong>git reset 和 git rebase</strong>：会重写历史，只适用于本地分支或私有分支</li>
-<li><strong>如果已经推送到远程仓库</strong>，使用 <code>git push --force-with-lease</code>（比 <code>--force</code> 更安全）来强制推送</li>
-</ul>
-<h3 id="6-示例场景"><a href="#6-示例场景" class="headerlink" title="6. 示例场景"></a>6. 示例场景</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安全地撤销某次提交（推荐）</span><br>git revert abc1234<br>git push origin main<br><br><span class="hljs-comment"># 本地删除最近3次提交（危险操作）</span><br>git reset --hard HEAD~3<br><br><span class="hljs-comment"># 删除历史中的某次特定提交</span><br>git rebase -i abc1234^<br><span class="hljs-comment"># 然后在编辑器中删除对应的提交行</span><br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p><strong>选择哪种方法取决于你的具体需求和是否已经将提交推送到远程仓库。</strong></p>
-</blockquote>
-<p><a href="#%E7%9B%AE%E5%BD%95">返回目录</a></p>
-<h2 id="三、实用技巧总结"><a href="#三、实用技巧总结" class="headerlink" title="三、实用技巧总结"></a>三、实用技巧总结</h2><h3 id="安全操作建议"><a href="#安全操作建议" class="headerlink" title="安全操作建议"></a>安全操作建议</h3><ol>
-<li>**优先使用 <code>git revert</code>**：对于已推送的提交，使用 revert 最安全</li>
-<li>**使用 <code>--force-with-lease</code>**：比 <code>--force</code> 更安全，会检查远程分支是否有新的提交</li>
-<li><strong>在功能分支上操作</strong>：避免在主分支上直接修改历史</li>
-<li><strong>备份重要分支</strong>：在修改历史前先创建备份分支</li>
-</ol>
-<h3 id="常用命令速查"><a href="#常用命令速查" class="headerlink" title="常用命令速查"></a>常用命令速查</h3><table>
+                <p>遵循规范的 Git 提交信息能极大提升代码的可维护性和团队协作效率。下面这个表格汇总了目前主流的提交信息规范核心要素：</p>
+<table>
 <thead>
 <tr>
-<th>操作</th>
-<th>命令</th>
-<th>适用场景</th>
+<th>规范要素</th>
+<th>说明与要求</th>
+<th>示例参考</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>修改最近提交</td>
-<td><code>git commit --amend</code></td>
-<td>本地未推送的提交</td>
+<td>提交类型 (Type)</td>
+<td>用特定关键字说明提交目的，如 feat（新功能）、fix（修复 bug）。</td>
+<td>feat, fix, docs</td>
 </tr>
 <tr>
-<td>安全撤销提交</td>
-<td><code>git revert &lt;hash&gt;</code></td>
-<td>已推送的提交</td>
+<td>范围 (Scope)</td>
+<td>可选，说明更改影响的部分，如模块、组件或文件。</td>
+<td>(login), (router)</td>
 </tr>
 <tr>
-<td>删除本地提交</td>
-<td><code>git reset --hard HEAD~n</code></td>
-<td>本地未推送的提交</td>
+<td>标题 (Subject)</td>
+<td>简短描述，建议使用祈使句（如”Add”而非”Added”），首字母大写，结尾不加句号，长度建议50字符以内。</td>
+<td>Add user authentication endpoint</td>
 </tr>
 <tr>
-<td>交互式修改历史</td>
-<td><code>git rebase -i HEAD~n</code></td>
-<td>本地分支历史整理</td>
+<td>正文 (Body)</td>
+<td>可选，详细解释修改内容和修改原因（而非”如何修改”），每行约72字符。</td>
+<td>说明问题背景、实现思路或注意事项。</td>
 </tr>
 <tr>
-<td>强制推送</td>
-<td><code>git push --force-with-lease</code></td>
-<td>需要重写远程历史时</td>
+<td>脚注 (Footer)</td>
+<td>可选，用于记录元信息，如关联的问题跟踪编号（Issue）、此次提交的影响。</td>
+<td>Closes #123, BREAKING CHANGE: …</td>
+</tr>
+<tr>
+<td>✍️ 规范格式与编写技巧</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>一次符合规范的提交信息通常格式如下：</td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
-<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ol>
-<li><strong>提交前检查</strong>：使用 <code>git status</code> 和 <code>git diff</code> 检查更改</li>
-<li><strong>小步提交</strong>：频繁提交，便于后续修改和回退</li>
-<li><strong>清晰的提交信息</strong>：使用规范的提交信息格式</li>
-<li><strong>分支策略</strong>：使用功能分支进行开发，避免直接在主分支上修改</li>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt; // 标题行<br><br>&lt;body&gt; // 正文（可选）<br><br>&lt;footer&gt; // 脚注（可选）<br></code></pre></td></tr></table></figure>
+<p>在编写时，你可以参考以下技巧：</p>
+<p>标题行：确保标题行能清晰概括此次提交的目的和内容，便于快速浏览历史。</p>
+<p>正文部分：在正文中，着重解释 “为什么” 要做出此次修改，包括修改的动机、与之前代码的差异等。如果修改复杂，可以使用列表来条理清晰地说明。</p>
+<p>提交类型的选择：根据更改性质选择最贴切的类型。除了表格中提到的，常见的类型还有：</p>
+<p>docs：仅文档更新。</p>
+<p>style：代码风格调整（空格、格式化等，不改变逻辑）。</p>
+<p>refactor：代码重构（既非新增功能，也非修复bug）。</p>
+<p>test：增加或修改测试。</p>
+<p>chore：构建过程或辅助工具的变动。</p>
+<p>语言选择：建议使用英文编写提交信息，以便于全球开发者协作。但如果团队内部有约定，使用中文也是可行的。</p>
+<p>特定规范要求：一些大型项目（如 Deepin）会在约定式提交的基础上，增加一些必填的元信息字段，例如 Log:（用于生成更新日志）。在为这类项目贡献代码时，需要留意其特定要求。</p>
+<p>示例<br>以下是一些遵循规范的 Git 提交信息示例，从简单到复杂，涵盖不同场景：</p>
+<p>🌟 基础示例</p>
+<ol>
+<li>功能提交<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">feat(auth): add OAuth2 login support<br><br>- Implement Google OAuth2 integration<br>- Add login page with OAuth2 options<br>- Create user session management<br><br>Closes #123<br></code></pre></td></tr></table></figure></li>
+<li>Bug 修复<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">fix(payment): correct currency conversion in checkout<br><br>Fix rounding error when converting from USD to EUR that caused<br>incorrect total amounts in shopping cart.<br><br>Fixes #456<br></code></pre></td></tr></table></figure></li>
+<li>文档更新<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">docs(readme): update installation instructions<br><br>Add detailed steps for Node.js version 18+ compatibility<br>Include troubleshooting section for common issues<br></code></pre></td></tr></table></figure>
+🔧 进阶示例</li>
+<li>代码重构<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">refactor(database): migrate from callbacks to async/await<br><br>- Replace callback hell with modern async syntax<br>- Improve error handling with try/catch blocks<br>- Maintain backward compatibility<br><br>BREAKING CHANGE: Database connection methods now return Promises<br>Migration guide: see MIGRATION.md<br></code></pre></td></tr></table></figure></li>
+<li>样式调整<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text">style(components): reformat code with Prettier<br><br>Apply new code style rules:<br>- 2-space indentation<br>- Single quotes for strings<br>- Trailing commas in objects<br></code></pre></td></tr></table></figure></li>
+<li>测试相关<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">test(api): add unit tests for user endpoints<br><br>Coverage for:<br>- User registration<br>- Profile update<br>- Password reset<br><br>Increase coverage to 90% for user module<br></code></pre></td></tr></table></figure>
+🚀 复杂场景示例</li>
+<li>包含破坏性变更<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs text">feat(config): restructure configuration system<br><br>- Move from JSON to YAML configuration files<br>- Consolidate environment variables<br>- Add validation schema<br><br>BREAKING CHANGE: Configuration file format changed from .json to .yml<br>Existing configs must be converted using tools/convert-config.js<br><br>Closes #789<br>See CONFIG_MIGRATION.md for details<br></code></pre></td></tr></table></figure></li>
+<li>多模块修改<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">fix: resolve critical security issues<br><br>- fix(auth): prevent SQL injection in login<br>- fix(api): validate input data in all endpoints<br>- fix(ui): sanitize user input in forms<br><br>Security: patch CVE-2023-12345<br>Requires immediate deployment<br></code></pre></td></tr></table></figure></li>
+<li>持续集成相关<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">chore(ci): migrate from Travis to GitHub Actions<br><br>- Add workflow for automated testing<br>- Implement code quality checks<br>- Configure deployment pipelines<br><br>Remove .travis.yml<br>Add .github/workflows/ci.yml<br></code></pre></td></tr></table></figure>
+📝 实际工作流示例</li>
+<li>功能分支合并<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs text">feat(checkout): implement multi-step checkout process<br><br>- Add address selection step<br>- Implement payment method options<br>- Create order review component<br>- Add progress indicator<br><br>Components:<br>- ShippingAddressForm<br>- PaymentMethodSelector  <br>- OrderSummary<br><br>Testing:<br>- Add E2E tests for checkout flow<br>- Unit tests for new components<br><br>Closes #101, #102, #103<br></code></pre></td></tr></table></figure></li>
+<li>热修复提交<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs text">fix: emergency patch for data loss issue<br><br>Immediately revert commit a1b2c3d that caused:<br>- User profile data corruption<br>- Order history disappearance<br><br>Rollback changes until root cause is identified<br><br>Hotfix: v1.2.1<br></code></pre></td></tr></table></figure>
+⚠️ 对比示例：好 vs 差<br>好的提交：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">feat(search): add real-time autocomplete<br><br>- Implement debounced search input<br>- Add suggestion dropdown<br>- Cache frequent queries<br><br>Improves user experience by 40% based on UX tests<br></code></pre></td></tr></table></figure>
+需要改进的提交：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">更新了一些东西<br><br>改了搜索功能，现在更好用了<br></code></pre></td></tr></table></figure>
+💡 实用技巧<br>使用 git commit -v 查看差异来编写更有意义的提交信息</li>
 </ol>
-<p><a href="#%E7%9B%AE%E5%BD%95">返回目录</a></p>
+<p>小步提交 - 每个提交只做一件事</p>
+<p>用正文解释”为什么” 而不是”做了什么”（代码已经展示了做了什么）</p>
+<p>引用相关问题 使用 Closes #123, Fixes #456 等</p>
+<p><img src="https://img1.baidu.com/it/u=2853165890,490679423&fm=253&fmt=auto&app=138&f=JPEG?w=802&h=500" srcset="/img/loading.gif" lazyload alt="这是一张图片的替代文本"></p>
 
                 
               </div>
@@ -455,9 +435,9 @@
       
         <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/" class="print-no-link">#版本控制</a>
       
-        <a href="/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/" class="print-no-link">#命令行</a>
+        <a href="/tags/%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" class="print-no-link">#代码规范</a>
       
-        <a href="/tags/%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/" class="print-no-link">#代码管理</a>
+        <a href="/tags/%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/" class="print-no-link">#提交规范</a>
       
     </div>
   
@@ -469,8 +449,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Git 开发常用命令大全</div>
-      <div>https://zuyue200.github.io/2025/10/11/git-work-cmds/</div>
+      <div>Git 提交信息规范</div>
+      <div>https://zuyue200.github.io/2025/10/11/git-submission-specification/</div>
     </div>
     <div class="license-meta">
       
@@ -531,9 +511,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/11/git-submission-specification/" title="Git 提交信息规范">
+                      <a href="/2025/10/11/git-common-cmds/" title="Git 常用命令大全">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Git 提交信息规范</span>
+                        <span class="hidden-mobile">Git 常用命令大全</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -541,8 +521,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/11/unity-common-methods/" title="Unity 常用方法参考">
-                        <span class="hidden-mobile">Unity 常用方法参考</span>
+                      <a href="/2025/10/11/git-work-cmds/" title="Git 开发常用命令大全">
+                        <span class="hidden-mobile">Git 开发常用命令大全</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
