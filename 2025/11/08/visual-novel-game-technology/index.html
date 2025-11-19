@@ -19,29 +19,30 @@
   <meta name="author" content="zuyue200">
   <meta name="keywords" content="">
   
-    <meta name="description" content="为VS Code配置Unity开发环境能提升你的编码效率，特别是代码自动补全和调试功能。下面是一个简洁的配置流程和关键步骤汇总。 flowchart TD     A[开始配置VS Code for Unity] --&gt; B[安装必要插件]     B --&gt; C[在Unity中关联VS Code]     C --&gt; D[配置调试功能]     D --&gt; E&#123;">
+    <meta name="description" content="主流视觉小说引擎Ren’Py 官网：https:&#x2F;&#x2F;www.renpy.org&#x2F;  Rakugo Visual Novel Kit 官网：https:&#x2F;&#x2F;novelkit.vercel.app&#x2F;  Naninovel 官网：https:&#x2F;&#x2F;naninovel.com&#x2F;  Fungus GitHub：https:&#x2F;&#x2F;github.com&#x2F;snozbot&#x2F;fungus 中文教程：https:&#x2F;&#x2F;clo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity VS Code 配置指南">
-<meta property="og:url" content="https://zuyue200.github.io/2025/10/11/unity-vscode-config/index.html">
+<meta property="og:title" content="视觉小说游戏技术研究">
+<meta property="og:url" content="https://zuyue200.github.io/2025/11/08/visual-novel-game-technology/index.html">
 <meta property="og:site_name" content="zuyue的个人空间">
-<meta property="og:description" content="为VS Code配置Unity开发环境能提升你的编码效率，特别是代码自动补全和调试功能。下面是一个简洁的配置流程和关键步骤汇总。 flowchart TD     A[开始配置VS Code for Unity] --&gt; B[安装必要插件]     B --&gt; C[在Unity中关联VS Code]     C --&gt; D[配置调试功能]     D --&gt; E&#123;">
+<meta property="og:description" content="主流视觉小说引擎Ren’Py 官网：https:&#x2F;&#x2F;www.renpy.org&#x2F;  Rakugo Visual Novel Kit 官网：https:&#x2F;&#x2F;novelkit.vercel.app&#x2F;  Naninovel 官网：https:&#x2F;&#x2F;naninovel.com&#x2F;  Fungus GitHub：https:&#x2F;&#x2F;github.com&#x2F;snozbot&#x2F;fungus 中文教程：https:&#x2F;&#x2F;clo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://b0.bdstatic.com/3867f0e9de4d8eec270f14421505a3c0.jpg@h_1280">
-<meta property="article:published_time" content="2025-10-11T14:45:05.000Z">
-<meta property="article:modified_time" content="2025-11-19T14:11:50.323Z">
+<meta property="og:image" content="https://zuyue200.github.io/img/default.png">
+<meta property="article:published_time" content="2025-11-08T15:49:07.000Z">
+<meta property="article:modified_time" content="2025-11-19T14:43:12.756Z">
 <meta property="article:author" content="zuyue200">
 <meta property="article:tag" content="Unity">
-<meta property="article:tag" content="VS Code">
-<meta property="article:tag" content="开发环境">
-<meta property="article:tag" content="调试">
+<meta property="article:tag" content="游戏开发">
+<meta property="article:tag" content="视觉小说">
+<meta property="article:tag" content="Ren&#39;Py">
+<meta property="article:tag" content="Godot">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://b0.bdstatic.com/3867f0e9de4d8eec270f14421505a3c0.jpg@h_1280">
+<meta name="twitter:image" content="https://zuyue200.github.io/img/default.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Unity VS Code 配置指南 - zuyue的个人空间</title>
+  <title>视觉小说游戏技术研究 - zuyue的个人空间</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,13 +214,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://b0.bdstatic.com/3867f0e9de4d8eec270f14421505a3c0.jpg@h_1280') no-repeat center center; background-size: cover;">
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Unity VS Code 配置指南"></span>
+            <span id="subtitle" data-typed-text="视觉小说游戏技术研究"></span>
           
         </div>
 
@@ -235,8 +236,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-10-11 22:45" pubdate>
-          2025年10月11日 晚上
+        <time datetime="2025-11-08 23:49" pubdate>
+          2025年11月8日 晚上
         </time>
       </span>
     
@@ -247,7 +248,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          698 字
+          2.3k 字
         
       </span>
     
@@ -258,7 +259,7 @@
         
         
         
-          6 分钟
+          20 分钟
         
       </span>
     
@@ -304,85 +305,200 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Unity VS Code 配置指南</h1>
+            <h1 id="seo-header">视觉小说游戏技术研究</h1>
             
             
               <div class="markdown-body">
                 
-                <p>为VS Code配置Unity开发环境能提升你的编码效率，特别是代码自动补全和调试功能。下面是一个简洁的配置流程和关键步骤汇总。</p>
-<pre><code class=" mermaid">flowchart TD
-    A[开始配置VS Code for Unity] --&gt; B[安装必要插件]
-    B --&gt; C[在Unity中关联VS Code]
-    C --&gt; D[配置调试功能]
-    D --&gt; E&#123;调试器附加成功?&#125;
-    E -- 是 --&gt; F[进行断点调试]
-    E -- 否 --&gt; G[检查并重连]
-    G --&gt; C
-    F --&gt; H[享受高效开发]
-</code></pre>
-
-
-
-
-
-
-
-<h2 id="🔌-安装必备插件"><a href="#🔌-安装必备插件" class="headerlink" title="🔌 安装必备插件"></a>🔌 安装必备插件</h2><p>首先，你需要在VS Code中安装以下扩展来支持C#和Unity开发：</p>
+                <h2 id="主流视觉小说引擎"><a href="#主流视觉小说引擎" class="headerlink" title="主流视觉小说引擎"></a>主流视觉小说引擎</h2><h3 id="Ren’Py"><a href="#Ren’Py" class="headerlink" title="Ren’Py"></a>Ren’Py</h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="https://www.renpy.org/">https://www.renpy.org/</a></li>
+</ul>
+<h3 id="Rakugo-Visual-Novel-Kit"><a href="#Rakugo-Visual-Novel-Kit" class="headerlink" title="Rakugo Visual Novel Kit"></a>Rakugo Visual Novel Kit</h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="https://novelkit.vercel.app/">https://novelkit.vercel.app/</a></li>
+</ul>
+<h3 id="Naninovel"><a href="#Naninovel" class="headerlink" title="Naninovel"></a>Naninovel</h3><ul>
+<li>官网：<a target="_blank" rel="noopener" href="https://naninovel.com/">https://naninovel.com/</a></li>
+</ul>
+<h3 id="Fungus"><a href="#Fungus" class="headerlink" title="Fungus"></a>Fungus</h3><ul>
+<li>GitHub：<a target="_blank" rel="noopener" href="https://github.com/snozbot/fungus">https://github.com/snozbot/fungus</a></li>
+<li>中文教程：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2304525">https://cloud.tencent.com/developer/article/2304525</a></li>
+</ul>
+<p>当前在Unity中主流的视觉小说（Visual Novel）开发工具选择相当丰富，既有功能全面的成熟插件，也有来自社区的优秀开源方案。</p>
+<p>下面这个表格整理了目前主流的几款工具，你可以快速了解它们的核心特点。</p>
 <table>
 <thead>
 <tr>
-<th>插件名称</th>
-<th>主要功能</th>
+<th>工具名称</th>
+<th>类型&#x2F;来源</th>
+<th>核心特点</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>C#</strong> (ms-dotnettools.csharp)</td>
-<td>提供C#语言基础支持，如语法高亮、智能提示</td>
+<td><strong>Naninovel</strong></td>
+<td>商业插件</td>
+<td>功能全面专业，拥有独立的脚本系统，支持可视化编辑器，社区资源和教程丰富。</td>
 </tr>
 <tr>
-<td><strong>Unity</strong> (unity.unity-debug)</td>
-<td>支持在VS Code中调试Unity游戏</td>
+<td><strong>Fungus</strong></td>
+<td>开源插件</td>
+<td>通过流程图（Flowchart）进行可视化编辑，无需编码，学习曲线平缓，非常适合初学者和快速原型开发。</td>
 </tr>
 <tr>
-<td><strong>C# Dev Kit</strong> (可选)</td>
-<td>提供更强大的代码编辑、项目管理功能</td>
+<td><strong>Pluliter</strong></td>
+<td>开源方案</td>
+<td>基于节点式可视化编程，提供17种功能节点处理对话、分支和变量，中文支持和社区友好。</td>
+</tr>
+<tr>
+<td><strong>GalForUnity</strong></td>
+<td>开源方案</td>
+<td>国产插件，中文界面友好，深度集成Live2D，模块化架构，适合制作包含动态角色的二次元风格游戏。</td>
 </tr>
 </tbody></table>
-<p>安装完”C#”插件后，建议按照官方说明配置其相关设置。</p>
-<h2 id="⚙️-关联Unity与VS-Code"><a href="#⚙️-关联Unity与VS-Code" class="headerlink" title="⚙️ 关联Unity与VS Code"></a>⚙️ 关联Unity与VS Code</h2><p>接下来，需要在Unity中设置VS Code为默认脚本编辑器：</p>
-<p>1.打开Unity，进入 <strong>Edit &gt; Preferences &gt; External Tools</strong>。</p>
-<p>2.在 <strong>External Script Editor</strong> 下拉菜单中，选择你安装的 <strong>Visual Studio Code</strong>。</p>
-<p>3.完成此设置后，在Unity中双击脚本文件，就会自动在VS Code中打开。</p>
-<h2 id="🐞-配置调试功能"><a href="#🐞-配置调试功能" class="headerlink" title="🐞 配置调试功能"></a>🐞 配置调试功能</h2><p>配置调试环境可以让你在VS Code中直接为Unity游戏设置断点、检查变量。根据一篇2025年的最新实践，现在的配置流程已经简化：</p>
-<p>1.<strong>无需手动创建</strong>launch.json：现代Unity插件通常会自动生成必要的调试配置。</p>
-<p>2.<strong>附加调试器</strong>：</p>
+<h2 id="💡-如何选择适合你的工具"><a href="#💡-如何选择适合你的工具" class="headerlink" title="💡 如何选择适合你的工具"></a>💡 如何选择适合你的工具</h2><p>了解了这些工具之后，你可以根据自身情况来做决定：</p>
 <ul>
-<li><p>从Unity双击一个脚本文件打开VS Code。</p>
+<li><p><strong>如果你是初学者或追求极速开发</strong>：Fungus 的可视化流程图非常直观，能让你在不写代码的情况下就构建出完整的剧情流程，是入门和快速验证想法的绝佳选择。</p>
 </li>
-<li><p>在VS Code侧边栏切换到”运行和调试”视图。</p>
+<li><p><strong>如果你追求功能全面和专业性</strong>：Naninovel 提供了开箱即用的完整解决方案，从剧本到演出控制都非常专业，尤其适合对游戏完成度有较高要求的开发者。</p>
 </li>
-<li><p>你应该能看到一个名为 “<strong>Attach to Unity</strong>“ 或类似的配置。</p>
+<li><p><strong>如果你习惯节点式编辑并需要处理复杂分支</strong>：Pluliter 的节点编辑器能让你清晰地掌控整个故事脉络，非常适合分支剧情复杂、需要精细控制变量和逻辑的项目。</p>
+</li>
+<li><p><strong>如果你的项目侧重Live2D和二次元风格</strong>：GalForUnity 对Live2D的深度集成和其中文社区支持，对于制作此类游戏来说是非常大的优势。</p>
 </li>
 </ul>
-<p>3.<strong>启动调试</strong>：</p>
+<h2 id="📊-技术选择分析概览表"><a href="#📊-技术选择分析概览表" class="headerlink" title="📊 技术选择分析概览表"></a>📊 技术选择分析概览表</h2><table>
+<thead>
+<tr>
+<th>特性维度</th>
+<th>Ren’Py</th>
+<th>Rakugo (Godot)</th>
+<th>Naninovel (Unity)</th>
+<th>Fungus (Unity)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>所属平台&#x2F;类型</td>
+<td>独立引擎</td>
+<td>Godot 引擎插件</td>
+<td>Unity 引擎插件</td>
+<td>Unity 引擎插件</td>
+</tr>
+<tr>
+<td>核心开发语言</td>
+<td>Python</td>
+<td>GDScript</td>
+<td>C# &#x2F; 自有脚本</td>
+<td>可视化流程图 (底层C#)</td>
+</tr>
+<tr>
+<td>学习曲线</td>
+<td>平缓</td>
+<td>中等</td>
+<td>中等偏陡</td>
+<td>非常平缓</td>
+</tr>
+<tr>
+<td>脚本系统</td>
+<td>自有文本脚本 + Python</td>
+<td>GDScript + 自有标记</td>
+<td>自有文本脚本 + C#</td>
+<td>块（Block）与命令（Command）</td>
+</tr>
+<tr>
+<td>核心优势</td>
+<td>专为VN优化、社区庞大、跨平台极佳</td>
+<td>开源免费、Godot轻量高效、设计现代</td>
+<td>功能全面专业、工业级解决方案、扩展性强</td>
+<td>无需编码、快速原型、学习成本极低</td>
+</tr>
+<tr>
+<td>核心劣势</td>
+<td>3D&#x2F;复杂游戏逻辑支持弱</td>
+<td>生态和资源相对较新、较少</td>
+<td>依赖Unity、学习曲线陡、成本高</td>
+<td>大型项目管理复杂、灵活性受限</td>
+</tr>
+<tr>
+<td>可视化程度</td>
+<td>低 (需写脚本)</td>
+<td>中 (需写脚本，但有编辑器集成)</td>
+<td>中 (强大的可视化编辑器辅助写脚本)</td>
+<td>极高 (完全可视化)</td>
+</tr>
+<tr>
+<td>授权模式</td>
+<td>免费开源 (MIT)</td>
+<td>免费开源 (MIT)</td>
+<td>商业付费</td>
+<td>免费开源 (Apache)</td>
+</tr>
+<tr>
+<td>理想使用场景</td>
+<td>传统VN、以叙事为核心的2D游戏、初学者入门</td>
+<td>Godot技术爱好者、希望融合轻度玩法的2D&#x2F;3D VN</td>
+<td>高质量商业项目、需要复杂集成和自定义的团队</td>
+<td>初学者、快速原型、艺术家&#x2F;设计师主导的项目</td>
+</tr>
+</tbody></table>
+<h2 id="🔍-详细技术分析"><a href="#🔍-详细技术分析" class="headerlink" title="🔍 详细技术分析"></a>🔍 详细技术分析</h2><h3 id="1-Ren’Py-视觉小说的标准答案"><a href="#1-Ren’Py-视觉小说的标准答案" class="headerlink" title="1. Ren’Py - 视觉小说的标准答案"></a>1. Ren’Py - 视觉小说的标准答案</h3><p><strong>技术栈</strong>：基于 Python，自带一个渲染器和音频管理器。其核心是一个专为视觉小说设计的领域特定语言。</p>
+<p><strong>优势</strong>：</p>
 <ul>
-<li><p>在代码中设置一个断点。</p>
-</li>
-<li><p>选择”Attach to Unity”配置并启动调试。</p>
-</li>
-<li><p>回到Unity编辑器，<strong>运行游戏</strong>。此时，Unity可能会弹出提示，请求允许调试，你需要点击确认（例如选择”Enable debugging for this session”）。</p>
-</li>
-<li><p>当Unity编辑器下方状态栏出现<strong>蓝色连接图标</strong>，并且VS Code的断点被命中时，说明调试器连接成功。</p>
-</li>
+<li><strong>生态成熟</strong>：拥有最庞大的视觉小说开发者社区，教程、插件、解决方案极其丰富。</li>
+<li><strong>开箱即用</strong>：对话、立绘、背景、音效、存档、回看等VN核心功能都已内置，无需从头造轮子。</li>
+<li><strong>Python赋能</strong>：可以利用Python强大的生态系统处理复杂逻辑、小游戏或数据管理。</li>
 </ul>
-<h2 id="💡-补充与提醒"><a href="#💡-补充与提醒" class="headerlink" title="💡 补充与提醒"></a>💡 补充与提醒</h2><ul>
-<li><p><strong>关于编译</strong>：Unity项目中的C#脚本实际上是由Unity引擎内部的Mono或IL2CPP运行时负责编译和执行的，并非由VS Code直接编译。VS Code主要承担代码编辑和调试的角色。</p>
-</li>
-<li><p><strong>确保使用最新工具</strong>：检查Unity的Package Manager中 <strong>Visual Studio Editor</strong> 包的版本，确保其更新到插件要求的版本（如2.0.20以上），这有助于保证兼容性。</p>
-</li>
-<li><p><strong>问题排查</strong>：如果遇到智能提示（IntelliSense）不工作的问题，可以尝试在VS Code中通过命令面板 (Ctrl+Shift+P) 运行 <strong>OmniSharp: Select Project</strong>，然后选择项目根目录的.sln文件。</p>
-</li>
+<p><strong>劣势</strong>：</p>
+<ul>
+<li><strong>技术边界</strong>：虽然能做一些小游戏，但其架构不适合开发需要复杂动画、物理或全3D的游戏。</li>
+<li><strong>定制瓶颈</strong>：当你想实现一个引擎本身不支持的炫酷效果时，可能需要深入其Python底层，比在通用游戏引擎中更困难。</li>
 </ul>
+<p><strong>选择建议</strong>：如果你的项目是传统的2D视觉小说，或者你是一名初学者，Ren’Py 几乎总是最佳选择。它让你能专注于故事本身，而不是技术实现。</p>
+<h3 id="2-Rakugo-Visual-Novel-Kit-Godot的轻量化专业方案"><a href="#2-Rakugo-Visual-Novel-Kit-Godot的轻量化专业方案" class="headerlink" title="2. Rakugo Visual Novel Kit - Godot的轻量化专业方案"></a>2. Rakugo Visual Novel Kit - Godot的轻量化专业方案</h3><p><strong>技术栈</strong>：基于 Godot 引擎，使用 GDScript。它是一个为Godot项目添加视觉小说功能的框架&#x2F;插件。</p>
+<p><strong>优势</strong>：</p>
+<ul>
+<li><strong>Godot的优势</strong>：继承Godot引擎的轻量、快速、开源免费的特性。场景节点结构清晰，易于理解。</li>
+<li><strong>现代设计</strong>：代码和架构设计通常更现代，与引擎本身融合度高。</li>
+<li><strong>灵活性</strong>：你可以充分利用Godot的所有功能，轻松地为你的视觉小说加入平台跳跃、解谜、甚至简单的3D场景。</li>
+</ul>
+<p><strong>劣势</strong>：</p>
+<ul>
+<li><strong>生态系统</strong>：社区和资源远小于Ren’Py和Unity生态。遇到问题时，能找到的帮助有限。</li>
+<li><strong>成熟度</strong>：作为相对较新的工具，其功能和稳定性可能不如Naninovel那样历经考验。</li>
+</ul>
+<p><strong>选择建议</strong>：如果你已经熟悉或希望学习Godot，并且你的项目不完全是纯对话，而是希望融入更多游戏玩法，Rakugo是一个非常好的选择。它提供了VN的专业功能，又不失Godot的灵活性。</p>
+<h3 id="3-Naninovel-Unity中的工业级解决方案"><a href="#3-Naninovel-Unity中的工业级解决方案" class="headerlink" title="3. Naninovel - Unity中的工业级解决方案"></a>3. Naninovel - Unity中的工业级解决方案</h3><p><strong>技术栈</strong>：基于 Unity 引擎，核心是一个自定义的脚本系统和播放器。使用C#进行扩展和集成。</p>
+<p><strong>优势</strong>：</p>
+<ul>
+<li><strong>功能全面</strong>：提供了你能想到的几乎所有视觉小说功能，并且实现得非常专业和稳定。</li>
+<li><strong>Unity的强大生态</strong>：可以无缝使用Unity的Asset Store资源、强大的动画系统、后期处理效果等，实现最高质量的画面表现。</li>
+<li><strong>可视化工具</strong>：提供专门的可视化编辑器来管理角色、背景、音频等，并实时预览剧本效果。</li>
+</ul>
+<p><strong>劣势</strong>：</p>
+<ul>
+<li><strong>成本</strong>：商业插件，需要付费购买。</li>
+<li><strong>复杂度</strong>：系统庞大，学习曲线较陡，需要同时了解Naninovel和Unity两套系统。</li>
+<li><strong>项目重量</strong>：会显著增加项目的体积和结构复杂度。</li>
+</ul>
+<p><strong>选择建议</strong>：适用于追求最高质量、商业化发行的团队。如果你的视觉小说需要电影级运镜、复杂的2D&#x2F;3D混合效果，或者需要与Unity中已有的其他系统（如RPG战斗）深度集成，Naninovel是最专业的选择。</p>
+<h3 id="4-Fungus-无障碍的原型制作利器"><a href="#4-Fungus-无障碍的原型制作利器" class="headerlink" title="4. Fungus - 无障碍的原型制作利器"></a>4. Fungus - 无障碍的原型制作利器</h3><p><strong>技术栈</strong>：基于 Unity 引擎，核心是流程图。每个”块”包含一系列可执行的”命令”。</p>
+<p><strong>优势</strong>：</p>
+<ul>
+<li><strong>零门槛</strong>：完全不需要编程知识，通过拖拽连接就能创建对话和流程，是艺术家和叙事设计师的完美工具。</li>
+<li><strong>快速迭代</strong>：制作和修改对话流程的速度极快，非常适合在项目初期验证想法。</li>
+<li><strong>免费开源</strong>：零成本，并且可以查看和修改源码。</li>
+</ul>
+<p><strong>劣势</strong>：</p>
+<ul>
+<li><strong>可扩展性</strong>：当项目变得非常庞大时，流程图可能会变得杂乱无章，难以维护。</li>
+<li><strong>性能</strong>：对于超大型项目，其性能可能不如基于代码的解决方案。</li>
+<li><strong>功能深度</strong>：虽然基础功能齐全，但要实现非常定制化的复杂逻辑时，可能仍需编写C#脚本。</li>
+</ul>
+<p><strong>选择建议</strong>：初学者、游戏设计师和小型团队的绝佳选择。非常适合制作游戏原型、广告互动叙事或中小型视觉小说。如果你的团队里没有程序员，Fungus几乎是唯一能让你在Unity中完成项目的选择。</p>
+<h2 id="🎯-最终决策路径"><a href="#🎯-最终决策路径" class="headerlink" title="🎯 最终决策路径"></a>🎯 最终决策路径</h2><h3 id="“我就是想做一部标准的视觉小说。”"><a href="#“我就是想做一部标准的视觉小说。”" class="headerlink" title="“我就是想做一部标准的视觉小说。”"></a>“我就是想做一部标准的视觉小说。”</h3><p><strong>首选</strong>：Ren’Py。它的专用性为你省去了所有不必要的麻烦。</p>
+<h3 id="“我的团队没有程序员，但我们想用Unity-Godot。”"><a href="#“我的团队没有程序员，但我们想用Unity-Godot。”" class="headerlink" title="“我的团队没有程序员，但我们想用Unity&#x2F;Godot。”"></a>“我的团队没有程序员，但我们想用Unity&#x2F;Godot。”</h3><p><strong>首选</strong>：Fungus。可视化程度最高。</p>
+<p><strong>次选</strong>：在Godot中也可以寻找类似Fungus的节点工具，但Rakugo本身仍需要一些脚本能力。</p>
+<h3 id="“我是程序员，我想在Godot-Unity里做一个带玩法的视觉小说。”"><a href="#“我是程序员，我想在Godot-Unity里做一个带玩法的视觉小说。”" class="headerlink" title="“我是程序员，我想在Godot&#x2F;Unity里做一个带玩法的视觉小说。”"></a>“我是程序员，我想在Godot&#x2F;Unity里做一个带玩法的视觉小说。”</h3><p><strong>Godot派</strong>：选择 Rakugo。享受开源和轻量化的乐趣。</p>
+<p><strong>Unity派</strong>：如果预算充足且追求极致，选 Naninovel；如果希望更手写代码控制，可以基于 Rakugo 的设计理念在Unity中自己实现，或者使用 Dialogue System。</p>
+<h3 id="“我们要做一个面向全平台的商业大作，不计成本。”"><a href="#“我们要做一个面向全平台的商业大作，不计成本。”" class="headerlink" title="“我们要做一个面向全平台的商业大作，不计成本。”"></a>“我们要做一个面向全平台的商业大作，不计成本。”</h3><p><strong>首选</strong>：Unity + Naninovel。它的专业性、稳定性和功能完整性最适合商业生产环境。</p>
 
                 
               </div>
@@ -401,12 +517,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="category-chain-item">开发工具</a>
+  <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" class="category-chain-item">游戏开发</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/Unity/" class="category-chain-item">Unity</a>
+  <a href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/%E6%8A%80%E6%9C%AF%E7%A0%94%E7%A9%B6/" class="category-chain-item">技术研究</a>
   
   
 
@@ -425,11 +541,13 @@
       
         <a href="/tags/Unity/" class="print-no-link">#Unity</a>
       
-        <a href="/tags/VS-Code/" class="print-no-link">#VS Code</a>
+        <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/" class="print-no-link">#游戏开发</a>
       
-        <a href="/tags/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" class="print-no-link">#开发环境</a>
+        <a href="/tags/%E8%A7%86%E8%A7%89%E5%B0%8F%E8%AF%B4/" class="print-no-link">#视觉小说</a>
       
-        <a href="/tags/%E8%B0%83%E8%AF%95/" class="print-no-link">#调试</a>
+        <a href="/tags/Ren-Py/" class="print-no-link">#Ren'Py</a>
+      
+        <a href="/tags/Godot/" class="print-no-link">#Godot</a>
       
     </div>
   
@@ -441,8 +559,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Unity VS Code 配置指南</div>
-      <div>https://zuyue200.github.io/2025/10/11/unity-vscode-config/</div>
+      <div>视觉小说游戏技术研究</div>
+      <div>https://zuyue200.github.io/2025/11/08/visual-novel-game-technology/</div>
     </div>
     <div class="license-meta">
       
@@ -454,7 +572,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年10月11日</div>
+          <div>2025年11月8日</div>
         </div>
       
       
@@ -503,9 +621,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/10/11/unity-common-methods/" title="Unity 常用方法参考">
+                      <a href="/2025/11/08/newpost1/" title="newpost1">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Unity 常用方法参考</span>
+                        <span class="hidden-mobile">newpost1</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -513,8 +631,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/10/11/vue-common-syntax-guide/" title="Vue.js常用语法完全指南：从基础到高级应用">
-                        <span class="hidden-mobile">Vue.js常用语法完全指南：从基础到高级应用</span>
+                      <a href="/2025/10/11/git-common-cmds/" title="Git 常用命令大全">
+                        <span class="hidden-mobile">Git 常用命令大全</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
